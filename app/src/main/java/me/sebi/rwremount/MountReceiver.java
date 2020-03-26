@@ -77,6 +77,7 @@ public class MountReceiver extends BroadcastReceiver {
             Log.d(LOG_TAG, "Ignoring due to security considerations - " + unixPath);
             return;
         }
+        //TODO improve the execution as to what needs to be whithin the try block, what needs to be closed and what needs to dectroyed and when and where
         try {
             String commandLine = buildCommandLine(unixPath);
             Log.d(LOG_TAG, "Executing as root - " + commandLine);
@@ -97,6 +98,7 @@ public class MountReceiver extends BroadcastReceiver {
                 Log.d(LOG_TAG, "ERROR: mount exited with code " + mountExitValue + " - " +
                         unixPath + mountError);
             }
+            mountProcess.destroy();
         } catch (IOException e) {
             Log.d(LOG_TAG, "ERROR: IOException during execution.\n" + e.getMessage());
         } catch (InterruptedException e) {
