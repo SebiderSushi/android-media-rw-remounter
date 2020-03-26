@@ -6,16 +6,19 @@ Just want back write access to your sd card?
 Well now there's an app for that!
 
 ### Requirements
-- An android device with an SD Card slot and/or USB OTG support
+- An device with an SD Card slot and/or USB OTG support
 - Root access, since the app remounts some stuff
+- Android 8.0 or later (but if you are running android 6.0.1, 7.0 or 7.1, it shouldn't hurt to just give it a shot)
 
-This has successfully been tested with devices running android 8.1, 9 and 10.
-The app might be incompatible with devices running android 5.1 and below, but this has not been tested.
+The approach currently used by this app definitely only applies to devices running android 6 or later.
+It has successfully been tested with devices running android 8.1, 9 and 10 and unsucsessfully on devices running android 7.1, 6.0.1 and 5.1.
+For further information consult the [wiki](https://github.com/SebiderSushi/android-media-rw-remounter/wiki).
+
 
 ### How to use it
 - Install
 - Launch once
-- Insert or remount some storage and grant root acces
+- Insert or remount some storage. Grant permanent root acces once prompted.
 - Profit!
 
 Notes:
@@ -23,6 +26,17 @@ The app must be launched at least once or else the system won't ever run it. Thi
 This restriction can be removed by installing the app as a privileged app, i.e. by writing the apk file to `/system/priv-app`.  
 Upon the first mount with this app installed, i.e. when you actively need to grant root access, it is possible that the app will do nothing.
 This is because the app will currently be terminated if it has to wait more than a few seconds for root access. Once root access has already been granted and the app is immediately given root access every time it needs it, everything should work as expected.
+
+### Issue reporting and support
+If you run into major issues while using the app or if you are an expert and found any problems with the code, don't hesitate to open an issue about it. Try to provide as much details as possible. Describe what you did in exact steps, what you expected and what happened instead.  
+If you open an issue because the app doesn't work on your device even though you feel it should, provide at least your android version, device brand and model and filesystem of the storage you want to mount.  
+If you can, provide the output of the `mount` command. It can be run inside virtually any android terminal emulator application or, if you are familier with it, via `adb shell mount` when connected to a desktop pc in debugging mode.  
+It is okay to redact the output as much as you feel appropriate, but please make sure that the mount options of your external storages are included and that it is obvious that where they are.
+
+Apart from these remarks, keep in mind that this is currently a very small and spontaneous project released in the hopes of being useful. While i will take my best care to design this application to be stable and never harmful, i cannot guarantee any kind of safety. Use of this application happens on your own risk and discretion, especially since i can only test the application on the few devices that i own. If in doubt, consider testing the functionality of the app on your device with an unimportant sd card first to eliminate any possiblity of data loss.  
+That being said, there's currently nothing destructive going on and misbehavior should be limited to failing to enable write access. Anything this app might currently do wrong if running on a wrong device should entirely be revertable by uninstalling it and remounting your storage device.
+
+This is not a big project and i do not plan to put a lot of effort into expanding or supporting it too far of my own use case. Thus, i will mostly try to keep it minimal and be satisfied with plain functionality, but any such investments are very welcome. Feel free to report issues, to give suggestions and to open pull requests while not expecting too much activity from me apart from administrating the repository.
 
 ### Benefits of this approach
 You may know other attempts for enabling write access on external storages. Some of these use an approach that changes your system configuration so that every new app is added to the group `media_rw`. As a result, that app can get write access to the path of your external sd card unter `/mnt/media_rw`.
