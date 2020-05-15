@@ -1,4 +1,4 @@
-package me.sebi.rwremount;
+package com.gitlab.giwiniswut.rwremount;
 
 import android.app.Activity;
 import android.os.Bundle;

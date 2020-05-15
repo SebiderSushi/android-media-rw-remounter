@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.sebi.rwremount">
+    package="com.gitlab.giwiniswut.rwremount">
 
     <application android:label="External Storage R/W Remounter">
         <activity
