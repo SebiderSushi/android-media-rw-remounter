@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="explanation">This application needs root access to operate.\nClick on the button below to request root access for this application, then grant root access with your preferred root solution. Since this app runs automatically whenever an SD Card is mounted, it will usually be executed shortly after boot. Hence, it is preferred to allow root access all the time to ensure that the app does not time out until root is granted manually.\nAs soon as root access is set up, you can go on and remount your sd card.</string>
+    <string name="button_request_root">request root access</string>
+    <string name="root_status_caption">root status:</string>
+    <string name="root_status_unknown">unknown</string>
+    <string name="root_status_granted">granted</string>
+    <string name="root_status_denied">not granted</string>
+</resources>
