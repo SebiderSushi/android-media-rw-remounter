@@ -40,7 +40,15 @@
         android:id="@+id/button_requestRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/button_hideAppIcon"
         android:onClick="onRequestRootButtonClick"
         android:text="@string/button_request_root" />
+
+    <Button
+        android:id="@+id/button_hideAppIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onHideAppIconButtonClick"
+        android:text="@string/button_hide_app_icon" />
 </RelativeLayout>

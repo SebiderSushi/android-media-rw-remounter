@@ -1,6 +1,10 @@
 package com.gitlab.giwiniswut.rwremount;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +22,24 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void onHideAppIconButtonClick(View button) {
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle(R.string.button_hide_app_icon);
+        b.setMessage(R.string.explanation_hide_app_icon);
+        b.setNegativeButton(android.R.string.cancel, null);
+        b.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getPackageManager().setComponentEnabledSetting(
+                        new ComponentName(getApplicationContext(), MainActivity.class),
+                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                        PackageManager.DONT_KILL_APP);
+                finish();
+            }
+        });
+        b.show();
     }
 
     public void onRequestRootButtonClick(View button) {
