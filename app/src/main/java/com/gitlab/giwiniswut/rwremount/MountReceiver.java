@@ -25,7 +25,7 @@ public class MountReceiver extends BroadcastReceiver {
     /**
      * The path of the internal storage which should be ignored
      */
-    private static final String PRIMARY_PATH = "/storage/emulated/0";
+    private static final String PRIMARY_PATH = "/storage/emulated/";
     /**
      * Enforce strict rules for path input
      * This is currently the best way i came up with that prevents any malicious input
@@ -68,7 +68,7 @@ public class MountReceiver extends BroadcastReceiver {
         // Remove leading file:// from path URI, that's 7 characters
         String unixPath = path.substring(7);
         // Don't touch the primary storage since it normally is fine
-        if (unixPath.contains(PRIMARY_PATH)) {
+        if (unixPath.startsWith(PRIMARY_PATH)) {
             Log.d(LOG_TAG, "Ignoring primary storage - " + unixPath);
             return;
         }
