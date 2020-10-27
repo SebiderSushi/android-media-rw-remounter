@@ -1,0 +1,1 @@
+remounts the SD Card to allow write access
