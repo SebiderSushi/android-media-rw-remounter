@@ -1,4 +1,4 @@
-# [ROOT] Android External Storage R/W Remounter
+# [ROOT] Android SD-Card R/W Remounter
 Remember how google decided in 2013 that android needs a new and fancy framework for storage access?  
 Frustrated of how they took away external storage write access because of this, as if to test drive the change on android devices with an SD Card (i.e. not Google devices) before enforcing it with internal storages as well for apps targeting and running on android 10 and above?  
 Just want back write access to your sd card?  
@@ -6,7 +6,7 @@ Just want back write access to your sd card?
 Well now there's an app for that!
 
 ### Requirements
-- An device with an SD Card slot and/or USB OTG support
+- A device with an SD Card slot
 - Root access, since the app remounts some stuff
 - Android 8.0 or later (but if you are running android 6.0.1, 7.0 or 7.1, it shouldn't hurt to just give it a shot)
 
@@ -18,11 +18,12 @@ For further information consult the [wiki](https://github.com/SebiderSushi/andro
 ### How to use it
 - Install
 - Launch once
-- Insert or remount some storage. Grant permanent root acces once prompted.
+- Grant permanent root access
+- Insert or remount some storage
 - Profit!
 
 Notes:
-The app must be launched at least once or else the system won't ever run it. This is a security mechanism of the Android platform to protect users from apps they never launched and maybe never wanted to use or install.
+The app must be launched at least once or else the system won't ever run it. This is a security mechanism of the Android platform to protect users from apps they've never launched and maybe never wanted to use or install.
 This restriction can be removed by installing the app as a privileged app, i.e. by writing the apk file to `/system/priv-app`.  
 Upon the first mount with this app installed, i.e. when you actively need to grant root access, it is possible that the app will do nothing.
 This is because the app will currently be terminated if it has to wait more than a few seconds for root access. Once root access has already been granted and the app is immediately given root access every time it needs it, everything should work as expected.
