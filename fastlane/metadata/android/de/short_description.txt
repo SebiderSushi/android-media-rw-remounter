@@ -1,0 +1,1 @@
+bindet die SD-Karte neu ein, um Schreibzugriff zu ermöglichen
