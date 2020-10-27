@@ -28,6 +28,9 @@ This restriction can be removed by installing the app as a privileged app, i.e. 
 Upon the first mount with this app installed, i.e. when you actively need to grant root access, it is possible that the app will do nothing.
 This is because the app will currently be terminated if it has to wait more than a few seconds for root access. Once root access has already been granted and the app is immediately given root access every time it needs it, everything should work as expected.
 
+### Limitations
+At the moment, i did not find any way to enable write access for secondary users as well. However, they still get read access to the SD Card.
+
 ### Issue reporting and support
 If you run into major issues while using the app or if you are an expert and found any problems with the code, don't hesitate to open an issue about it. Try to provide as much details as possible. Describe what you did in exact steps, what you expected and what happened instead.  
 If you open an issue because the app doesn't work on your device even though you feel it should, provide at least your android version, device brand and model and filesystem of the storage you want to mount.  
@@ -50,8 +53,8 @@ Such apps were unable to list the directory `/mnt/media_rw` whenever i've used t
 - Does not run in background or reduce the battery life by any meaningful amount
 
 ### How it works
-This app works by listening to system messages about user facing storage devices. Whenever something gets mounted, the app will run `mount -o remount,mask=7 /mnt/runtime/write/$SD_CARD_FS_UUID` in a root shell.
-On my device, the default behavior of Android is to mount external storages with `mask=18`, which prevents "group" and "others" from writing to that directory. `mask=7`, which removes read, write and execute permissions for "others" was chosen to mimic Androids mount options for `/storage/emulated/0` as observed on my Android device running LineageOS 16.0.  
+This app works by listening to system messages about user facing storage devices. Whenever something gets mounted, the app will run `mount -o remount,mask=0 /mnt/runtime/write/$SD_CARD_FS_UUID` in a root shell.
+On my device, the default behavior of Android is to mount external storages with `mask=18`, which prevents "group" and "others" from writing to that directory. `mask=0, which removes no permissions at all was chosen to allow for the greatest access possible. Remember that just the path under `/mnt/runtime/write/` is touched - the function of the android storage permission is preserved.
 For reference used an [awesome post](https://android.stackexchange.com/questions/217741/how-to-bind-mount-a-folder-inside-sdcard-with-correct-permissions/217936#217936) from android stackexchange.
 Especially for the part that `/mnt/runtime/write` needs to be remounted while the final path will be under `/storage`.
 
@@ -60,7 +63,7 @@ Since this app is called by the system every time it needs to take action, it do
 ### Security considerations
 Since the app handles input and has it end up in a root shell in some way, precautions were taken.  
 Firstly, the app listens to a system protected broadcast. This means that on a normal android system, only the system itself should be allowed to send these messages.  
-If however, an attacker might have managed to send such a broadcast anyway, rigorous restrictions are applied as to what will be accepted as input, to prevent escaping the shell command and running arbitrary stuff in the root shell and to prevent that someone requests an illegal location to be remounted with `mask=7`.
+If however, an attacker might have managed to send such a broadcast anyway, rigorous restrictions are applied as to what will be accepted as input, to prevent escaping the shell command and running arbitrary stuff in the root shell and to prevent that someone requests an illegal location to be remounted with `mask=0`.
 
 As a result, only storages mounted under `/storage` will be handled. Their possible UUIDS are also restricted to contain only letters, numbers, hyphens and underscores.  
 If you know regex, this is the rule for an acceptable path: `/storage/[A-Za-z0-9_-]+`  

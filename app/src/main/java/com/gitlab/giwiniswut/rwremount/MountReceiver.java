@@ -38,8 +38,11 @@ public class MountReceiver extends BroadcastReceiver {
     /**
      * Safely combine the mount command and the path
      * <p>
-     * mask=7 was chosen to mimic Androids own behavior on /storage/emulated
-     * as observed on LineageOS 15.1, 16.0 and 17.1
+     * mask=0 was chosen because the original mask removes just write access and allows
+     * other to read and execute anyway. In contrast to the mask=7 option that android
+     * uses when mounting /data/media on /storage/runtime/write/emulated, mask=0 allows the
+     * SD Card to be read by secondary Device users as well.
+     * Secondary device users are managed via the "Multiple users" section in the System Settings.
      * <p>
      * The path is altered because Android constructs the environment separately for each app.
      * This is based upon the excellent info from this great answer at stackexchange:
@@ -48,9 +51,9 @@ public class MountReceiver extends BroadcastReceiver {
      * @param unixPath The directory that should be given R/W access
      * @return The complete and escaped command line to be executed
      */
-    private String buildCommandLine(String unixPath) {
+    private static String buildCommandLine(String unixPath) {
         String runtimePath = unixPath.replaceFirst("/storage/", "/mnt/runtime/write/");
-        return "mount -o remount,mask=7 \"" + runtimePath + "\"";
+        return String.format("mount -o remount,mask=0 \"%s\"", runtimePath);
     }
 
     @Override
