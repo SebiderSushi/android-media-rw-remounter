@@ -1,10 +1,10 @@
-Remember how google decided in 2013 that android needs a new and fancy framework for storage access?
+This app tries to restore legacy SD Card write access, which has been removed in android 4.4 and newer.
 
-Frustrated of how they took away external storage write access because of this, as if to test drive the change on android devices with an SD Card (i.e. not Google devices) before enforcing it with internal storages as well for apps targeting and running on android 10 and above?
+**What is this**
+With android 4.4, Google decided that it would be time for a new and fancy way to access your internal storage and introduced the Storage Access Framework (SAF). You might have had some contact with it over time.
+Sadly, with this new feature Google also decided to remove SD Card write access like it used to exist, forcing every app to go through SAF if they want to write something to the SD Card. This required each developer to update their apps. Until this day, some apps still do not support the SAF.
 
-Just want back write access to your sd card?
-
-Well now there's an app for that!
+This app aims at allowing those apps to write to your SD Card again. It uses a method that should work on android 8.0 and above which involves remounting the SD Card, hence the name.
 
 **Requirements:**
 
@@ -13,8 +13,9 @@ Well now there's an app for that!
 * Android 8.0 or later (but if you are running android 6.0.1, 7.0 or 7.1, it shouldn't hurt to just give it a shot)
 
 The approach currently used by this app definitely only applies to devices running android 6 or later. It has successfully been tested with devices running android 8.1, 9 and 10 and unsucsessfully on devices running android 7.1, 6.0.1 and 5.1.
+With android 10 & 11, storage access became more restricted, forcing all newer apps to go through SAF. It remains to be seen what this does to legacy storage access and this app, and what's to come with even newer android versions.
 
-For further information consult the [wiki](https://github.com/SebiderSushi/android-media-rw-remounter/wiki).
+For more information, have a look at the [README](https://gitlab.com/giwiniswut/android-media-rw-remounter/-/blob/master/README.md) and the [Wiki](https://gitlab.com/giwiniswut/android-media-rw-remounter/-/wikis/Home).
 
 **How to use it:**
 
@@ -22,10 +23,16 @@ For further information consult the [wiki](https://github.com/SebiderSushi/andro
 * Launch once
 * Grant permanent root access
 * Insert or remount some storage
-* Profit!
+* Start writing files to the SD Card
 
 **Notes:**
 
 * The app must be launched at least once or else the system won't ever run it. This is a security mechanism of the Android platform to protect users from apps they've never launched and maybe never wanted to use or install.
 * This restriction can be removed by installing the app as a privileged app, i.e. by writing the apk file to `/system/priv-app`.
 * Upon the first mount with this app installed, i.e. when you actively need to grant root access, it is possible that the app will do nothing. This is because the app will currently be terminated if it has to wait more than a few seconds for root access. Once root access has already been granted and the app is immediately given root access every time it needs it, everything should work as expected.
+
+
+**How do i know if my device is compatible?**
+TL;DR: Just give it a shot.
+Ultimately, this app relies on how your specific device vendor chose to implement how your SD Card gets mounted and by which method write access gets removed. With pure android (AOSP), the approach with simple remounting of the SD Card will work from android 8.0 and above, where it uses `sdcardfs` to do the job, a special filesystem originally developed by Samsung. If you have a Samsung device, it's very much possible that it already uses `sdcardfs` and consequently might allow this app to function. Other device vendors or custom ROMs might also use `sdcardfs` below android 8.0 or another implementation which coincidentally allows this app to work.
+The minimal android version for this app is android 6.0, since AOSP has made a change to the directory structure that is used when the SD Card gets mounted in order to support runtime app permissions. The app is written to support this new directory structure and will not work on pure android below version 6.0 and is highly unlikely to work on any other android variant below android version 6.0 because of this.
