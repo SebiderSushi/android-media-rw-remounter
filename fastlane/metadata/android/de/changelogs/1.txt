@@ -1,0 +1,3 @@
+Ursprüngliche Version
+
+Enthält einige Informationen und die Möglichkeit, root Zugriff einzurichten, sowie die Anwendung vom Startbildschirm zu verbergen.

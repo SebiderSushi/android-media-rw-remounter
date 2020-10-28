@@ -1,0 +1,1 @@
+Korrektur: Sekundäre Gerätenutzer werden nicht länger komplett vom Zugriff auf die SD Karte ausgeschlossen

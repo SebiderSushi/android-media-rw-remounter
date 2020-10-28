@@ -1,0 +1,3 @@
+Initial Release
+
+Features an info screen that allows to set up root access and to hide the app from the homescreen.
