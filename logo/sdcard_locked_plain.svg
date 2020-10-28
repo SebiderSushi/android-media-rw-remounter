@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="108pt"
+   height="108pt"
+   viewBox="0 0 108 108"
+   version="1.1"
+   id="svg40">
+  <defs
+     id="defs34">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter_object-shadow">
+      <feFlood
+         flood-opacity=".8"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood790" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite792" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation=".7"
+         result="blur"
+         id="feGaussianBlur794" />
+      <feOffset
+         dx="-.7"
+         dy="-.7"
+         result="offset"
+         id="feOffset796" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite798" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter_foreground-shadow">
+      <feFlood
+         flood-opacity=".6"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood826" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite828" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation=".7"
+         result="blur"
+         id="feGaussianBlur830" />
+      <feOffset
+         dx="-1.7"
+         dy="1.7"
+         result="offset"
+         id="feOffset832" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite834" />
+    </filter>
+  </defs>
+  <g
+     id="layer_background"
+     style="display:inline">
+    <path
+       style="fill:#de4000"
+       d="M 0,108 V 0 h 108 z"
+       id="red_triangle" />
+    <path
+       style="fill:#3dcc54;filter:url(#filter_object-shadow)"
+       d="M 108,0 V 108 H 0 Z"
+       id="green_triangle" />
+  </g>
+  <g
+     id="layer_lock"
+     transform="translate(52,52)"
+     style="display:inline;filter:url(#filter_object-shadow)">
+    <rect
+       style="fill:#eeeeee;stroke:#000000;stroke-width:1.5"
+       id="lockbody"
+       width="36"
+       height="36"
+       rx="6"
+       x="0"
+       y="0" />
+    <path
+       style="fill:#000000"
+       d="m 18,18 m 2,0 v 5 a 2,2 0 1 1 -4,0 v -5 a 4,4 0 1 1 4,0"
+       id="keyhole" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-opacity:1"
+       d="m 28,0 v -8 a 10.6,10.6 0 0 0 -20,-5"
+       id="shackle" />
+  </g>
+  <g
+     id="layer_sdcard"
+     transform="translate(62,75) rotate(-90) scale(1,-1)"
+     style="filter:url(#filter_foreground-shadow);opacity:1">
+    <path
+       style="fill:#333333;stroke:#000000;stroke-width:1;stroke-opacity:1"
+       d="M 35,0 H 0 V 55 H 46 V 11 Z"
+       id="plastic" />
+    <rect
+       style="fill:#ffd700"
+       id="contact1"
+       width="8"
+       height="15"
+       x="2.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact2"
+       width="8"
+       height="15"
+       x="13.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact3"
+       width="8"
+       height="15"
+       x="24.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact4"
+       width="8"
+       height="15"
+       x="35.5"
+       y="11"
+       rx="2.5" />
+  </g>
+  <g
+     id="layer_viewport"
+     style="display:inline">
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.5"
+       id="minimal_circle"
+       cx="54"
+       cy="54"
+       r="33" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.5"
+       id="supposed_square"
+       width="72"
+       height="72"
+       x="18"
+       y="18" />
+  </g>
+</svg>

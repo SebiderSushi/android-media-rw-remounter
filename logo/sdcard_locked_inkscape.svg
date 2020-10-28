@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="108pt"
+   height="108pt"
+   viewBox="0 0 108 108"
+   version="1.1"
+   id="svg40"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="sdcard_locked.svg"
+   inkscape:export-filename="/home/sebi/sdcard_locked_background.png"
+   inkscape:export-xdpi="512"
+   inkscape:export-ydpi="512">
+  <defs
+     id="defs34">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter_object-shadow">
+      <feFlood
+         flood-opacity=".8"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood790" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite792" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation=".7"
+         result="blur"
+         id="feGaussianBlur794" />
+      <feOffset
+         dx="-.7"
+         dy="-.7"
+         result="offset"
+         id="feOffset796" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite798" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter_foreground-shadow">
+      <feFlood
+         flood-opacity=".6"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood826" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite828" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation=".7"
+         result="blur"
+         id="feGaussianBlur830" />
+      <feOffset
+         dx="-1.7"
+         dy="1.7"
+         result="offset"
+         id="feOffset832" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite834" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4.6736111"
+     inkscape:cx="68.526334"
+     inkscape:cy="68.840563"
+     inkscape:document-units="pt"
+     inkscape:current-layer="layer_lock"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1558"
+     inkscape:window-height="872"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     width="108mm"
+     units="pt"
+     inkscape:lockguides="false"
+     inkscape:snap-bbox="false" />
+  <metadata
+     id="metadata37">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer_background"
+     inkscape:label="background"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#de4000"
+       d="M 0,108 V 0 h 108 z"
+       id="red_triangle" />
+    <path
+       style="fill:#3dcc54;filter:url(#filter_object-shadow)"
+       d="M 108,0 V 108 H 0 Z"
+       id="green_triangle" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer_lock"
+     inkscape:label="lock"
+     transform="translate(52,52)"
+     style="display:inline;filter:url(#filter_object-shadow)"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#eeeeee;stroke:#000000;stroke-width:1.5"
+       id="lockbody"
+       width="36"
+       height="36"
+       rx="6"
+       x="0"
+       y="0" />
+    <path
+       style="fill:#000000"
+       d="m 18,18 m 2,0 v 5 a 2,2 0 1 1 -4,0 v -5 a 4,4 0 1 1 4,0"
+       id="keyhole" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-opacity:1"
+       d="m 28,0 v -8 a 10.6,10.6 0 0 0 -20,-5"
+       id="shackle" />
+  </g>
+  <g
+     inkscape:label="sdcard"
+     inkscape:groupmode="layer"
+     id="layer_sdcard"
+     transform="translate(62,75) rotate(-90) scale(1,-1)"
+     style="filter:url(#filter_foreground-shadow);opacity:1">
+    <path
+       style="fill:#333333;stroke:#000000;stroke-width:1;stroke-opacity:1"
+       d="M 35,0 H 0 V 55 H 46 V 11 Z"
+       id="plastic" />
+    <rect
+       style="fill:#ffd700"
+       id="contact1"
+       width="8"
+       height="15"
+       x="2.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact2"
+       width="8"
+       height="15"
+       x="13.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact3"
+       width="8"
+       height="15"
+       x="24.5"
+       y="4"
+       rx="2.5" />
+    <rect
+       style="fill:#ffd700"
+       id="contact4"
+       width="8"
+       height="15"
+       x="35.5"
+       y="11"
+       rx="2.5" />
+  </g>
+  <g
+     id="layer_viewport"
+     inkscape:label="viewport"
+     style="display:inline"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.5"
+       id="minimal_circle"
+       cx="54"
+       cy="54"
+       r="33" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.5"
+       id="supposed_square"
+       width="72"
+       height="72"
+       x="18"
+       y="18" />
+  </g>
+</svg>
