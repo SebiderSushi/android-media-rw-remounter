@@ -1,5 +1,10 @@
 This app tries to restore legacy SD Card write access, which has been removed in android 4.4 and newer.
 
+**DISCLAIMER**
+This is currently a very small and spontaneous project released in the hopes of being useful. While i take my best care to design this application to be stable and never harmful, i cannot guarantee any kind of safety. Use of this application happens on your own risk and discretion, especially since i can only test the application on the few devices that i own. If in major doubt, you might want to test the functionality of the app on your device with an unimportant SD Card first to eliminate any possiblity of data loss.
+That being said, there's currently nothing destructive going on and misbehavior should entirely be limited to failure of enabling write access. Anything this app might currently do wrong if running on a wrong device should entirely be revertable by uninstalling it and remounting your SD Card.
+
+
 **What is this**
 With android 4.4, Google decided that it would be time for a new and fancy way to access your internal storage and introduced the Storage Access Framework (SAF). You might have had some contact with it over time.
 Sadly, with this new feature Google also decided to remove SD Card write access like it used to exist, forcing every app to go through SAF if they want to write something to the SD Card. This required each developer to update their apps. Until this day, some apps still do not support the SAF.
