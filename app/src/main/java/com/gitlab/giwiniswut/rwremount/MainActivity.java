@@ -20,7 +20,6 @@ import java.util.Scanner;
 public class MainActivity extends Activity {
     public final static String KEY_MOUNTMASTER = "use_mountmaster";
     private static final String LOG_TAG = "RWRemount";
-    private boolean mRootGranted = false;
     private SharedPreferences prefs;
     private CheckBox checkbox_mountmaster;
 
@@ -58,10 +57,8 @@ public class MainActivity extends Activity {
     }
 
     public void onRequestRootButtonClick(View button) {
-        mRootGranted = requestRoot();
-
         TextView statusView = findViewById(R.id.textView_rootStatus);
-        if (mRootGranted) {
+        if (requestRoot()) {
             statusView.setText(R.string.root_status_granted);
             statusView.setBackgroundColor(0xFF00FF00);
         } else {
