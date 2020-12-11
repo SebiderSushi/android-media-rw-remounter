@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">SDRemount</string>
+    <string name="explanation">"Diese Anwendung benötigt root-Zugriff. Mithilfe des Schalters am unteren Bildschirmrand kann dieser sofort angefragt und durch die jeweilige root-Lösung gewährt werden. Diese Anwendung wird automatisch ausgeführt, sobald die SD-Karte eingehängt wird. Dies passiert normalerweise direkt nach dem Einschalten, daher ist es ratsam, den root-Zugriff automatisch zu gewähren, da in der aktuellen Version dieser Anwendung eine Zeitüberschreitung möglich ist, bis eine manuelle Bestätigung nach dem Einschalten gegeben werden kann. Sobald der root-Zugriff eingerichtet ist, kann direkt die SD-Karte neu eingehängt werden. Wenn alles wie erwartet funktioniert, kann die Anwendung optional vom Startbildschirm entfernt werden. Es ist dann normalerweise nicht mehr nötig mit ihr zu interagieren."</string>
+    <string name="pref_mountmaster_title">Globalen Mount Namespace verwenden</string>
+    <string name="pref_mountmaster_desc">Kann helfen wenn keine Wirkung eintritt. Benötigt womöglich Magisk.</string>
+    <string name="button_request_root">root-Zugriff anfordern</string>
+    <string name="root_status_caption">root-Status:</string>
+    <string name="root_status_unknown">unbekannt</string>
+    <string name="root_status_granted">gewährt</string>
+    <string name="root_status_denied">verweigert</string>
+    <string name="button_hide_app_icon">Anwendung verstecken</string>
+    <string name="explanation_hide_app_icon">Entfernt die Anwendung komplett vom Startbildschirm. Dies kann nur durch eine Neuinstallation rückgängig gemacht werden.</string>
+</resources>
