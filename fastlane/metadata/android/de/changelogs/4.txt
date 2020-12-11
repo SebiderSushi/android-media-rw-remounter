@@ -1,0 +1,2 @@
+Deutsche Übersetzung
+Option, den globalen Mount Namespace zu verwenden

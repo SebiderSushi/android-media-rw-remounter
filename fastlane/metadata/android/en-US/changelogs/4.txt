@@ -1,0 +1,2 @@
+German translation
+Option to use the global mount namespace
