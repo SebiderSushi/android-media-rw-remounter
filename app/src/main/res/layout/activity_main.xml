@@ -7,12 +7,46 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:gravity="center"
         android:padding="5dp"
         android:text="@string/explanation"
         android:textSize="16sp" />
 
+    <TextView
+        android:id="@+id/textView_mountmaster_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textView_mountmaster_description"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="5dp"
+        android:layout_toLeftOf="@id/checkbox_mountmaster"
+        android:text="@string/pref_mountmaster_title"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView_mountmaster_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layout_rootrequest"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="5dp"
+        android:layout_toLeftOf="@id/checkbox_mountmaster"
+        android:text="@string/pref_mountmaster_desc" />
+
+    <CheckBox
+        android:id="@+id/checkbox_mountmaster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layout_rootrequest"
+        android:layout_alignTop="@id/textView_mountmaster_title"
+        android:layout_alignBottom="@id/textView_mountmaster_description"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="5dp"
+        android:onClick="onMountMasterPreferenceChange" />
+
     <LinearLayout
+        android:id="@+id/layout_rootrequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_requestRoot">

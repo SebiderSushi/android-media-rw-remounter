@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.io.DataOutputStream;
@@ -15,13 +18,25 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MainActivity extends Activity {
+    public final static String KEY_MOUNTMASTER = "use_mountmaster";
     private static final String LOG_TAG = "RWRemount";
     private boolean mRootGranted = false;
+    private SharedPreferences prefs;
+    private CheckBox checkbox_mountmaster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkbox_mountmaster = findViewById(R.id.checkbox_mountmaster);
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        checkbox_mountmaster.setChecked(prefs.getBoolean(KEY_MOUNTMASTER, false));
+    }
+
+    public void onMountMasterPreferenceChange(View view) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean(KEY_MOUNTMASTER, checkbox_mountmaster.isChecked());
+        editor.apply();
     }
 
     public void onHideAppIconButtonClick(View button) {

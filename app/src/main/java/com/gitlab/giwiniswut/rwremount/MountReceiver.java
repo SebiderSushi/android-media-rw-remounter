@@ -3,6 +3,7 @@ package com.gitlab.giwiniswut.rwremount;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.DataOutputStream;
@@ -80,11 +81,14 @@ public class MountReceiver extends BroadcastReceiver {
             Log.d(LOG_TAG, "Ignoring due to security considerations - " + unixPath);
             return;
         }
+        boolean useMountmaster = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext())
+                .getBoolean(MainActivity.KEY_MOUNTMASTER, false);
+        String su = useMountmaster ? "su -mm" : "su";
         //TODO improve the execution as to what needs to be whithin the try block, what needs to be closed and what needs to dectroyed and when and where
         try {
             String commandLine = buildCommandLine(unixPath);
-            Log.d(LOG_TAG, "Executing as root - " + commandLine);
-            Process mountProcess = Runtime.getRuntime().exec("su");
+            Log.d(LOG_TAG, "Executing as root (" + su + ") - " + commandLine);
+            Process mountProcess = Runtime.getRuntime().exec(su);
             DataOutputStream terminal = new DataOutputStream(mountProcess.getOutputStream());
             terminal.writeBytes(commandLine + "\nexit\n");
             terminal.flush();
