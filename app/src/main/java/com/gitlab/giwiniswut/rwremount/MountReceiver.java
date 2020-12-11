@@ -22,7 +22,7 @@ import java.util.Scanner;
  * up in the root shell where the remount command is executed. See {@link #ALLOWED_PATH_REGEX}
  */
 public class MountReceiver extends BroadcastReceiver {
-    private static final String LOG_TAG = "RWRemount";
+    private static final String LOG_TAG = "SDRemount";
     /**
      * The path of the internal storage which should be ignored
      */
