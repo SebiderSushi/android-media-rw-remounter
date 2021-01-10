@@ -66,7 +66,7 @@ Such apps were unable to list the directory `/mnt/media_rw` whenever i've used t
 
 ### How it works
 This app works by listening to system messages about user facing storage devices. Whenever something gets mounted, the app will run `mount -o remount,mask=0 /mnt/runtime/write/$SD_CARD_FS_UUID` in a root shell.
-On my device, the default behavior of Android is to mount external storages with `mask=18`, which prevents "group" and "others" from writing to that directory. `mask=0, which removes no permissions at all was chosen to allow for the greatest access possible. Remember that just the path under `/mnt/runtime/write/` is touched - the function of the android storage permission is preserved.
+On my device, the default behavior of Android is to mount external storages with `mask=18`, which prevents "group" and "others" from writing to that directory. `mask=0`, which removes no permissions at all was chosen to allow for the greatest access possible. Remember that just the path under `/mnt/runtime/write/` is touched - the function of the android storage permission is preserved.
 For reference used an [awesome post](https://android.stackexchange.com/questions/217741/how-to-bind-mount-a-folder-inside-sdcard-with-correct-permissions/217936#217936) from android stackexchange.
 Especially for the part that `/mnt/runtime/write` needs to be remounted while the final path will be under `/storage`.
 
