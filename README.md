@@ -5,6 +5,17 @@ Just want back write access to your SD Card?
 
 Well now there's an app for that!
 
+<a href="https://f-droid.org/app/com.gitlab.giwiniswut.rwremount">
+ <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+      alt="Get it on F-Droid"
+      height="70">
+</a>
+<a href="https://apt.izzysoft.de/fdroid/index/apk/com.gitlab.giwiniswut.rwremount">
+ <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
+      alt="Get it on IzzyOnDroid"
+      height="70">
+</a>
+
 ### Requirements
 - A device with an SD Card slot
 - Root access, since the app remounts some stuff
