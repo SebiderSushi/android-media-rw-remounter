@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 public class MainActivity extends Activity {
     public final static String KEY_MOUNTMASTER = "use_mountmaster";
-    private static final String LOG_TAG = "RWRemount";
+    private static final String LOG_TAG = "SDRemount";
     private SharedPreferences prefs;
     private CheckBox checkbox_mountmaster;
 
